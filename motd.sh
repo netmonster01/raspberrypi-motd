@@ -116,9 +116,9 @@ host=$(hostname -f)
 labelHost="$(extend "$host")"
 labelHost="$borderBar  $(color $statsLabelColor "Host Name.....:") $labelHost$borderBar"
 
-hostIp=$(hostname -I)
-labelIp="$(extend "$hostIp")"
-labelIp="$borderBar  $(color $statsLabelColor  "Host IP.......:") $labelHost$borderBar"
+#hostIp=$(hostname -I)
+#labelIp="$(extend "$hostIp")"
+#labelIp="$borderBar  $(color $statsLabelColor  "Host IP.......:") $labelHost$borderBar"
 
 label1="$(extend "$login")"
 label1="$borderBar  $(color $statsLabelColor "Last Login....:") $label1$borderBar"
@@ -138,7 +138,7 @@ label4="$borderBar  $(color $statsLabelColor "Home space....:") $label4$borderBa
 label5="$(extend "$(/opt/vc/bin/vcgencmd measure_temp | cut -c "6-9")ºC")"
 label5="$borderBar  $(color $statsLabelColor "Temperature...:") $label5$borderBar"
 
-stats="$labelHost\n$labelIp\n$label1\n$label2\n$label3\n$label4\n$label5"
+stats="$labelHost\n$label1\n$label2\n$label3\n$label4\n$label5"
 
 # Print motd
 echo -e "$header\n$borderEmptyLine\n$greetings\n$borderEmptyLine\n$stats\n$borderEmptyLine\n$borderBottomLine"       
